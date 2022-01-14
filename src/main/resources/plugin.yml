@@ -1,0 +1,5 @@
+main: com.learnspigot.auth.plugin.AuthPlugin
+name: "Auth"
+version: 1.0-SNAPSHOT
+author: "Devous"
+api-version: 1.18
