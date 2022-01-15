@@ -17,6 +17,8 @@ public record PacketHandler(@NotNull CodeHandler codeHandler) implements dev.dev
         }
 
         Optional<UUID> uid = codeHandler.uidFromCode(NumberUtils.toInt(packet.content()));
-        uid.ifPresent(uuid -> Bukkit.getOfflinePlayer(uuid).setWhitelisted(true));
+        uid.ifPresent(uuid -> {
+            Bukkit.getOfflinePlayer(uuid).setWhitelisted(true);
+        });
     }
 }

@@ -18,12 +18,11 @@ import java.util.concurrent.TimeUnit;
 public final class Auth {
     private final @NotNull MongoDatabase mongoDatabase;
     private final @NotNull ScheduledExecutorService scheduledExecutorService = Executors.newSingleThreadScheduledExecutor();
-    private boolean enabled = true;
+    private boolean enabled;
 
     public Auth(final @NotNull JavaPlugin plugin) {
         this.mongoDatabase = new MongoDatabase(AuthConstant.MONGO_DATABASE_URI.get());
         Objects.requireNonNull(plugin.getCommand("toggleauth")).setExecutor(new AuthCommand(this));
-        System.out.println(isEnabled());
         enabled = isEnabled();
         plugin.getServer().setWhitelist(enabled);
         plugin.getLogger().info(enabled ?
