@@ -9,7 +9,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.Optional;
 import java.util.UUID;
 
-public record PacketHandler(@NotNull CodeHandler codeHandler) implements dev.devous.electron.PacketHandler {
+public record PacketHandler(@NotNull CodeHandler codeHandler) implements dev.devous.electron.handler.PacketHandler {
     @Override
     public void handle(@NotNull Packet packet) {
         if (!packet.header().equals("WHITELIST")) {
