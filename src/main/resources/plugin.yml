@@ -3,3 +3,6 @@ name: "Auth"
 version: 1.0-SNAPSHOT
 author: "Devous"
 api-version: 1.18
+commands:
+  toggleauth:
+    description: "Toggle authentication"

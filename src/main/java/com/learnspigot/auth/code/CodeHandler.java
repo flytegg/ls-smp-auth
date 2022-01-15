@@ -58,7 +58,7 @@ public final class CodeHandler {
         scheduledExecutorService.schedule(() -> {
             removeIfExists(uid);
             electron.packetQueue().queue(new Packet(uid, "EXPIRED", String.valueOf(finalCode)));
-        }, 30L, TimeUnit.SECONDS);
+        }, 60L, TimeUnit.SECONDS);
         return code;
     }
 }
